@@ -1,0 +1,17 @@
+[
+    {
+        "repository": "android_device_huawei_y301a1",
+        "target_path": "device/huawei/y301a1",
+        "branch": "cm-11.0"
+    },
+    {
+        "repository": "android_kernel_huawei_y301a1",
+        "target_path": "kernel/huawei/y301a1",
+        "branch": "cm-11.0"
+    },
+    {
+        "repository": "android_vendor_huawei_y301a1",
+        "target_path": "vendor/huawei/y301a1",
+        "branch": "cm-11.0"
+    }
+]
