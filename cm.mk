@@ -2,17 +2,17 @@
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := y301a1
+PRODUCT_RELEASE_NAME := valiant
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/huawei/y301a1/device_y301a1.mk)
+$(call inherit-product, device/huawei/valiant/device_valiant.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := y301a1
-PRODUCT_NAME := cm_y301a1
+PRODUCT_DEVICE := valiant
+PRODUCT_NAME := cm_valiant
 PRODUCT_BRAND := huawei
-PRODUCT_MODEL := y301a1
+PRODUCT_MODEL := valiant
 PRODUCT_MANUFACTURER := huawei

@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/huawei/y301a1/overlay
+DEVICE_PACKAGE_OVERLAYS += device/huawei/valiant/overlay
 
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
@@ -63,30 +63,30 @@ PRODUCT_PACKAGES += \
 
 # Files
 PRODUCT_COPY_FILES += \
-    device/huawei/y301a1/rootdir/init.huawei.rc:root/init.huawei.rc \
-    device/huawei/y301a1/rootdir/init.huawei.usb.rc:root/init.huawei.usb.rc \
-    device/huawei/y301a1/rootdir/ueventd.huawei.rc:root/ueventd.huawei.rc
+    device/huawei/valiant/rootdir/init.huawei.rc:root/init.huawei.rc \
+    device/huawei/valiant/rootdir/init.huawei.usb.rc:root/init.huawei.usb.rc \
+    device/huawei/valiant/rootdir/ueventd.huawei.rc:root/ueventd.huawei.rc
 
 PRODUCT_COPY_FILES += \
-    device/huawei/y301a1/configs/qosmgr_rules.xml:system/etc/qosmgr_rules.xml
+    device/huawei/valiant/configs/qosmgr_rules.xml:system/etc/qosmgr_rules.xml
 
 PRODUCT_COPY_FILES += \
-    device/huawei/y301a1/configs/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    device/huawei/y301a1/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    device/huawei/y301a1/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/huawei/y301a1/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+    device/huawei/valiant/configs/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+    device/huawei/valiant/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    device/huawei/valiant/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    device/huawei/valiant/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
-    device/huawei/y301a1/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    device/huawei/y301a1/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/huawei/y301a1/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/huawei/valiant/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    device/huawei/valiant/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    device/huawei/valiant/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
-    device/huawei/y301a1/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-    device/huawei/y301a1/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
-    device/huawei/y301a1/keychars/7x27a_kp.kcm:system/usr/keychars/7x27a_kp.kcm \
-    device/huawei/y301a1/keylayout/7x27a_kp.kl:system/usr/keylayout/7x27a_kp.kl \
-    device/huawei/y301a1/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl
+    device/huawei/valiant/idc/qwerty.idc:system/usr/idc/qwerty.idc \
+    device/huawei/valiant/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
+    device/huawei/valiant/keychars/7x27a_kp.kcm:system/usr/keychars/7x27a_kp.kcm \
+    device/huawei/valiant/keylayout/7x27a_kp.kl:system/usr/keylayout/7x27a_kp.kl \
+    device/huawei/valiant/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -153,9 +153,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=eth0 \
     wifi.supplicant_scan_interval=60
 
-$(call inherit-product, vendor/huawei/y301a1/msm7x27a-common-vendor.mk)
-$(call inherit-product, vendor/huawei/y301a1/y301a1-vendor.mk)
+$(call inherit-product, vendor/huawei/valiant/msm7x27a-common-vendor.mk)
+$(call inherit-product, vendor/huawei/valiant/valiant-vendor.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_y301a1
-PRODUCT_DEVICE := y301a1
+PRODUCT_NAME := full_valiant
+PRODUCT_DEVICE := valiant

@@ -23,12 +23,12 @@
 USE_CAMERA_STUB := true
 
 # Inherit from the proprietary version
--include vendor/huawei/y301a1/BoardConfigVendor.mk
+-include vendor/huawei/valiant/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-TARGET_SPECIFIC_HEADER_PATH := device/huawei/y301a1/include
+TARGET_SPECIFIC_HEADER_PATH := device/huawei/valiant/include
 
 # Architecture and CPU
 TARGET_ARCH := arm
@@ -73,7 +73,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
 # Graphics
 BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
-BOARD_EGL_CFG := device/huawei/y301a1/configs/egl.cfg
+BOARD_EGL_CFG := device/huawei/valiant/configs/egl.cfg
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 BOARD_USE_MHEAP_SCREENSHOT := true
 TARGET_DOESNT_USE_FENCE_SYNC := true
@@ -81,15 +81,15 @@ TARGET_QCOM_DISPLAY_VARIANT := legacy
 USE_OPENGL_RENDERER := true
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/huawei/y301a1/cmhw
+BOARD_HARDWARE_CLASS := device/huawei/valiant/cmhw
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=huawei androidboot.selinux=permissive
 BOARD_PAGE_SIZE := 2048
-TARGET_KERNEL_SOURCE := kernel/huawei/y301a1
-TARGET_KERNEL_CONFIG := hw_msm7x27a_defconfig
-TARGET_PREBUILT_KERNEL := device/huawei/y301a1/kernel
+TARGET_KERNEL_SOURCE := kernel/huawei/valiant
+TARGET_KERNEL_CONFIG := cm_valiant_defconfig
+TARGET_PREBUILT_KERNEL := device/huawei/valiant/kernel
 
 # Lights
 TARGET_PROVIDES_LIBLIGHTS := true
@@ -102,18 +102,22 @@ TARGET_QCOM_MEDIA_VARIANT := legacy
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x800000
 BOARD_CACHEIMAGE_PARTITION_SIZE := 0xBD20000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x1400000
-
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 268435456
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 268435456
 BOARD_FLASH_BLOCK_SIZE := 131072
-TARGET_USERIMAGES_USE_EXT4 := true
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/y301a1/recovery/recovery-keys.c
+TARGET_RECOVERY_FSTAB := device/huawei/valiant/rootdir/etc/fstab.valiant
+RECOVERY_FSTAB_VERSION := 2
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/valiant/recovery/recovery-keys.c
 BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
-TARGET_RECOVERY_INITRC := device/huawei/y301a1/recovery/init.rc
+TARGET_RECOVERY_INITRC := device/huawei/valiant/recovery/init.rc
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+DEVICE_RESOLUTION := 480x800
+USE_SET_METADATA := false
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/huawei/y301a1/sepolicy
+BOARD_SEPOLICY_DIRS += device/huawei/valiant/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \
@@ -133,7 +137,12 @@ TARGET_FORCE_CPU_UPLOAD := true
 # Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER := NL80211
-TARGET_CUSTOM_WIFI := ../../device/huawei/y301a1/libhardware_legacy/wifi/wifi.c
+TARGET_CUSTOM_WIFI := ../../device/huawei/valiant/libhardware_legacy/wifi/wifi.c
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Filesystems
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USERIMAGES_USE_EXFAT := true
